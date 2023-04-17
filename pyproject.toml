@@ -23,7 +23,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-zeno-evals-hub = "zeno-evals-hub.runner:command_line"
+zeno-evals-hub = "zeno-evals-hub.main:command_line"
 
 [tool.pyright]
 include = ["zeno-evals-hub"]

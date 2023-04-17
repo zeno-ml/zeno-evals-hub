@@ -20,7 +20,12 @@ def command_line():
     app = FastAPI(title="Frontend API")
     api_app = FastAPI(title="Backend API")
 
+    @api_app.get("/test")
+    def test():
+        return {"test": "test"}
+
     app.mount("/api", api_app)
+
     app.mount(
         "/",
         StaticFiles(
@@ -32,3 +37,7 @@ def command_line():
 
     print("Running server")
     uvicorn.run(app)
+
+
+if __name__ == "__main__":
+    command_line()
