@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "zeno-evals-hub"
+version = "0.1.0"
+description = ""
+authors = ["Alex Cabrera <alex.cabrera@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8.1"
+fastapi = "^0.95.0"
+uvicorn = "^0.21.1"
+
+[tool.poetry.dev-dependencies]
+black = "^23.3.0"
+usort = "^1.0.6"
+flake8 = "^6.0.0"
+mypy = "^1.2.0"
+pyright = "^1.1.302"
+prettier = "^0.0.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+zeno-evals-hub = "zeno-evals-hub.runner:command_line"
+
+[tool.pyright]
+include = ["zeno-evals-hub"]
+useLibraryCodeForTypes = true
