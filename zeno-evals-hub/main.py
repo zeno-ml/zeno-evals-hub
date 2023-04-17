@@ -36,7 +36,7 @@ def command_line():
     )
 
     print("Running server")
-    uvicorn.run(app)
+    uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT")))
 
 
 if __name__ == "__main__":
