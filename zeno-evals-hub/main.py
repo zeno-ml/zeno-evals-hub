@@ -1,45 +1,44 @@
 import os
 import sys
 
-import pandas as pd
-
 import uvicorn
+import yaml  # type: ignore
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-
-from zeno import get_server, zeno, ZenoParameters  # type: ignore
+from zeno import get_server, zeno  # type: ignore
+from zeno_evals import generate_zeno_config  # type: ignore
 
 
 def command_line():
     app = FastAPI(title="Frontend API")
-    api_app = FastAPI(title="Backend API")
 
-    @api_app.get("/test")
-    def test():
-        return {"test": "test"}
+    args = []
+    with open(sys.argv[1], "r") as f:
+        args = yaml.safe_load(f)
 
-    # from zeno import get_server, zeno
+    @app.get("/args")
+    def get_args():
+        return args
 
-    df = pd.read_csv("./data/adult.csv")
+    os.chdir(os.path.dirname(sys.argv[1]))
 
-    configA = ZenoParameters(metadata=df.head(10), serve=False)
-    configB = ZenoParameters(metadata=df.head(100), serve=False)
-
-    zenoA = zeno(configA)
-    if zenoA is None:
-        sys.exit(1)
-    serverA = get_server(zenoA)
-    zenoA.start_processing()
-    app.mount("/zenoA", serverA)
-
-    zenoB = zeno(configB)
-    if zenoB is None:
-        sys.exit(1)
-    serverB = get_server(zenoB)
-    zenoB.start_processing()
-    app.mount("/zenoB", serverB)
-
-    app.mount("/api", api_app)
+    zeno_objs = []
+    for entry in args:
+        name = list(entry.keys())[0]
+        params = entry[name]
+        config = generate_zeno_config(
+            params["results-file"],
+            params["second-results-file"],
+            params["functions-file"],
+        )
+        config.serve = False
+        zeno_obj = zeno(config)
+        if zeno_obj is None:
+            sys.exit(1)
+        server = get_server(zeno_obj)
+        zeno_obj.start_processing()
+        zeno_objs.append(zeno_obj)
+        app.mount("/" + name, server)
 
     app.mount(
         "/",
