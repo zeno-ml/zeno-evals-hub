@@ -26,6 +26,7 @@ def command_line():
     for entry in args:
         name = list(entry.keys())[0]
         params = entry[name]
+        # TODO: handle not having a second results or functions file
         config = generate_zeno_config(
             params["results-file"],
             params["second-results-file"],
