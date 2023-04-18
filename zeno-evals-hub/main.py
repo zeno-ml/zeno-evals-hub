@@ -1,19 +1,13 @@
 import os
+import sys
+
+import pandas as pd
 
 import uvicorn
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
-# from zeno import get_server, zeno
-
-# create zeno object
-# create second zeno object
-
-# create fastapi for both zeno objects
-
-# serve
-
-# get_server()
+from zeno import get_server, zeno, ZenoParameters  # type: ignore
 
 
 def command_line():
@@ -23,6 +17,27 @@ def command_line():
     @api_app.get("/test")
     def test():
         return {"test": "test"}
+
+    # from zeno import get_server, zeno
+
+    df = pd.read_csv("./data/adult.csv")
+
+    configA = ZenoParameters(metadata=df.head(10), serve=False)
+    configB = ZenoParameters(metadata=df.head(100), serve=False)
+
+    zenoA = zeno(configA)
+    if zenoA is None:
+        sys.exit(1)
+    serverA = get_server(zenoA)
+    zenoA.start_processing()
+    app.mount("/zenoA", serverA)
+
+    zenoB = zeno(configB)
+    if zenoB is None:
+        sys.exit(1)
+    serverB = get_server(zenoB)
+    zenoB.start_processing()
+    app.mount("/zenoB", serverB)
 
     app.mount("/api", api_app)
 
@@ -36,8 +51,10 @@ def command_line():
     )
 
     print("Running server")
-    uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT")))
 
+    port = 8000
+    port_arg = os.getenv("PORT")
+    if port_arg is not None:
+        port = int(port_arg)
 
-if __name__ == "__main__":
-    command_line()
+    uvicorn.run(app, host="localhost", port=port)

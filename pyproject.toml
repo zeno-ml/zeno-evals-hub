@@ -6,7 +6,8 @@ authors = ["Alex Cabrera <alex.cabrera@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8.1"
+zenoml = "^0.4.7"
+python = "^3.8.1,<=3.11"
 fastapi = "^0.95.0"
 uvicorn = "^0.21.1"
 
