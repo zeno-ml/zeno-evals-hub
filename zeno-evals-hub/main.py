@@ -11,27 +11,20 @@ from zeno_evals import generate_zeno_config  # type: ignore
 
 
 # parse information in spec
-def prepare_spec(params, second_exists):
+def prepare_spec(file_path):
     res = {}
-
     data = []
-    with open(params["results-file"]) as f:
-        for index, line in enumerate(f):
-            data.append(json.loads(line))
-            if index == 1:
-                break
-    data2 = []
-    if second_exists:
-        with open(params["second-results-file"]) as f:
-            for index, line in enumerate(f):
-                data2.append(json.loads(line))
-                if index == 1:
-                    break
+    accuracy = 0
+    with open(file_path) as f:
+        for line in f:
+            json_entry = json.loads(line)
+            if "final_report" in json_entry:
+                accuracy = json_entry["final_report"]["accuracy"]
+            data.append(json_entry)
 
-    res["accuracy"] = [
-        data[1]["final_report"]["accuracy"],
-        data2[1]["final_report"]["accuracy"] if second_exists else "",
-    ]
+    res["models"] = data[0]["spec"]["completion_fns"][0]
+    res["accuracy"] = accuracy * 100
+    res["events"] = len(data) - 2
     return res
 
 
@@ -87,11 +80,22 @@ def command_line():
     for entry in args:
         name = list(entry.keys())[0]
         params = entry[name]
+
         second_exists = True if "second-results-file" in params else False
         function_exists = True if "function-results" in params else False
+
+        res_spec = prepare_spec(params["results-file"])
+        params["models"] = [res_spec["models"]]
+        params["accuracy"] = [res_spec["accuracy"]]
+        params["events"] = [res_spec["events"]]
+
+        if second_exists:
+            sec_res_spec = prepare_spec(params["second-results-file"])
+            params["models"].append(sec_res_spec["models"])
+            params["accuracy"].append(sec_res_spec["accuracy"])
+            params["events"].append(sec_res_spec["events"])
+
         config = prepare_zeno_config(params, second_exists, function_exists)
-        params["spec"] = prepare_spec(params, second_exists)
-        params["zeno"] = prepare_zeno_params(config)
         config.serve = False
         zeno_obj = zeno(config)
         if zeno_obj is None:

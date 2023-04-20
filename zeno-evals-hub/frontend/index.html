@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./build/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./build/openai.svg" />
     <link rel="stylesheet" href="./build/smui.css" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,8 +23,25 @@
       href="https://fonts.googleapis.com/css?family=Roboto+Mono"
     />
   </head>
+  <div id="header">
+    <img src="./build/openai.svg" alt="OpenAI SVG" />
+    <h2>OpenAI Evals Hub</h2>
+  </div>
   <body>
     <div id="app"></div>
     <script type="module" src="http://localhost:5173/src/main.ts"></script>
   </body>
 </html>
+<style>
+  #header {
+    display: flex;
+    align-items: center;
+  }
+  #header h2 {
+    margin: 10px;
+  }
+  #header img {
+    width: 50px;
+    height: 50px;
+  }
+</style>

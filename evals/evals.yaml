@@ -5,4 +5,5 @@
 - emotional-intelligence:
     results-file: ./crossword/crossword-turbo.jsonl
     second-results-file: ./crossword/crossword-turbo-0301.jsonl
-    functions-file: ./crossword/crossword_fns.py
+- crossword-only-result:
+    results-file: ./crossword/crossword-turbo.jsonl
