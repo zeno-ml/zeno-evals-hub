@@ -11,7 +11,7 @@ ENV HOME=/home/user \
 WORKDIR $HOME/app
 # Copy the current directory contents into the container at $HOME/app setting the owner to the user
 COPY --chown=user . $HOME/app
-ADD --chown=user ./.zeno_cache $HOME/app/.zeno_cache
+# ADD --chown=user ./.zeno_cache $HOME/app/.zeno_cache
 RUN chown user:user -R $HOME/app
 
 # COPY ./requirements.txt /code/requirements.txt
