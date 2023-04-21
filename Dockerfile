@@ -22,4 +22,4 @@ RUN chown user:user -R $HOME/app
 RUN pip install .
 
 
-CMD python -m zeno-evals-hub evals/evals.yaml
+CMD zeno-evals-hub evals/evals.yaml
