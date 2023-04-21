@@ -8,7 +8,7 @@
 
 <main>
   <header>
-    <h1>Evals Hub</h1>
+    <h1>Zeno Evals Hub</h1>
   </header>
   <div class="tagline">
     Explore and compare the results of
@@ -20,6 +20,8 @@
     <img class="open_ai" src="./build/zeno.png" alt="Zeno logo" />
     <b><a href="https://github.com/zeno-ml/zeno/stargazers">Zeno</a></b>
   </div>
+  <br />
+  <div>Add your own evals!</div>
   <!-- table with links to zeno sites. -->
   <div id="container">
     <div id="table-background">
@@ -40,12 +42,14 @@
             {#each final_data as d}
               {@const name = Object.keys(d)[0]}
               <tr>
-                <td><a href="#"><span class="name-wrap">{name}</span></a> </td>
+                <td
+                  ><a href={d[name]["link"]}><span class="name-wrap">{name}</span></a>
+                </td>
                 <td>
                   {#each d[name]["models"] as m}{m}<br />{/each}
                 </td>
                 <td>
-                  {#each d[name]["accuracy"] as a}{a}%<br />{/each}
+                  {#each d[name]["accuracy"] as a}{a.toFixed(2)}%<br />{/each}
                 </td>
                 <td>
                   {#each d[name]["events"] as e}{e}<br />{/each}

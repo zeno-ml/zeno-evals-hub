@@ -6,8 +6,8 @@ import uvicorn
 import yaml  # type: ignore
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from zeno import get_server, zeno, ZenoParameters  # type: ignore
-from zeno_evals import generate_zeno_config  # type: ignore
+from zeno import ZenoParameters, get_server, zeno  # type: ignore
+from zeno_evals import ZenoEvals
 
 
 # parse information in spec
@@ -39,30 +39,6 @@ def prepare_zeno_params(config: ZenoParameters):
     return res
 
 
-# handle not having a second results or functions file
-def prepare_zeno_config(params, second_exits, function_exists) -> ZenoParameters:
-    if second_exits and function_exists:
-        return generate_zeno_config(
-            params["results-file"],
-            params["second-results-file"],
-            params["functions-file"],
-        )
-    elif second_exits:
-        return generate_zeno_config(
-            params["results-file"],
-            params["second-results-file"],
-        )
-    elif function_exists:
-        return generate_zeno_config(
-            params["results-file"],
-            params["functions-file"],
-        )
-    else:
-        return generate_zeno_config(
-            params["results-file"],
-        )
-
-
 def command_line():
     app = FastAPI(title="Frontend API")
     args = []
@@ -82,12 +58,12 @@ def command_line():
         params = entry[name]
 
         second_exists = True if "second-results-file" in params else False
-        function_exists = True if "function-results" in params else False
 
         res_spec = prepare_spec(params["results-file"])
         params["models"] = [res_spec["models"]]
         params["accuracy"] = [res_spec["accuracy"]]
         params["events"] = [res_spec["events"]]
+        params["link"] = [params["link"]]
 
         if second_exists:
             sec_res_spec = prepare_spec(params["second-results-file"])
@@ -95,8 +71,16 @@ def command_line():
             params["accuracy"].append(sec_res_spec["accuracy"])
             params["events"].append(sec_res_spec["events"])
 
-        config = prepare_zeno_config(params, second_exists, function_exists)
+        zeno_eval = ZenoEvals(
+            params.get("results-file"),
+            params.get("second-results-file"),
+            params.get("functions-file"),
+        )
+        config = zeno_eval.generate_zeno_config()
+
         config.serve = False
+        config.cache_path = "./.zeno_cache_" + name
+
         zeno_obj = zeno(config)
         if zeno_obj is None:
             sys.exit(1)

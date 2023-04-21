@@ -1,12 +1,11 @@
 - crossword:
     results-file: ./crossword/crossword-turbo.jsonl
-    second-results-file: ./crossword/crossword-turbo-0301.jsonl
+    second-results-file: ./crossword/crossword-4.jsonl
     functions-file: ./crossword/crossword_fns.py
     link: https://github.com/openai/evals/tree/main/evals/registry/data/partially_solved_crossword_clues
-- emotional-intelligence:
-    results-file: ./crossword/crossword-turbo.jsonl
-    second-results-file: ./crossword/crossword-turbo-0301.jsonl
-    link: https://github.com/openai/evals/tree/main/evals/registry/data/partially_solved_crossword_clues
-- crossword-only-result:
-    results-file: ./crossword/crossword-turbo.jsonl
-    link: https://github.com/openai/evals/tree/main/evals/registry/data/partially_solved_crossword_clues
+- us-tort-law:
+    results-file: ./us-tort-law/us-tort-law-turbo.jsonl
+    link: https://github.com/openai/evals/tree/main/evals/registry/data/us-tort-law
+# - emotional-intelligence:
+#     results-file: ./emotional-intelligence/emotional-intelligence-turbo.jsonl
+#     link: https://github.com/openai/evals/tree/main/evals/registry/data/emotional-intelligence
