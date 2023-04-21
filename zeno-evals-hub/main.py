@@ -6,8 +6,8 @@ import uvicorn
 import yaml  # type: ignore
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from zeno import ZenoParameters, get_server, zeno  # type: ignore
-from zeno_evals import ZenoEvals
+from zeno import get_server, zeno, ZenoParameters  # type: ignore
+from zeno_evals import ZenoEvals  # type: ignore
 
 
 # parse information in spec
@@ -101,8 +101,10 @@ def command_line():
     print("Running server")
 
     port = 8000
+    host = "localhost"
     port_arg = os.getenv("PORT")
     if port_arg is not None:
         port = int(port_arg)
+        host = "0.0.0.0"
 
-    uvicorn.run(app, host="localhost", port=port)
+    uvicorn.run(app, host=host, port=port)
