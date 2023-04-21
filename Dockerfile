@@ -7,7 +7,7 @@ RUN useradd -m -u 1000 user
 USER user
 # Set home to the user's home directory
 ENV HOME=/home/user \
-	PATH=/home/user/.local/bin:$PATH
+	PATH=/home/user/.local/bin:$PATH \
     PORT=7860
 WORKDIR $HOME/app
 # Copy the current directory contents into the container at $HOME/app setting the owner to the user
