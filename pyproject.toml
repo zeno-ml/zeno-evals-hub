@@ -27,9 +27,6 @@ prettier = "^0.0.7"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.poetry.scripts]
-zeno-evals-hub = "zeno-evals-hub.main:command_line"
-
 [tool.pyright]
 include = ["zeno-evals-hub"]
 useLibraryCodeForTypes = true
