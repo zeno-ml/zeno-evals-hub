@@ -6,6 +6,7 @@
 - us-tort-law:
     results-file: ./us-tort-law/us-tort-law-turbo.jsonl
     link: https://github.com/openai/evals/tree/main/evals/registry/data/us-tort-law
-# - emotional-intelligence:
-#     results-file: ./emotional-intelligence/emotional-intelligence-turbo.jsonl
-#     link: https://github.com/openai/evals/tree/main/evals/registry/data/emotional-intelligence
+- emotional-intelligence:
+    results-file: ./emotional-intelligence/emotional-intelligence-turbo.jsonl
+    second-results-file: ./emotional-intelligence/emotional-intelligence-0301.jsonl
+    link: https://github.com/openai/evals/tree/main/evals/registry/data/emotional-intelligence

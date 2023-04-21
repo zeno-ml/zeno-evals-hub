@@ -16,12 +16,26 @@
     <a href="https://github.com/openai/evals">
       <b>OpenAI Evals </b>
     </a>
-    using
+    with
     <img class="open_ai" src="./build/zeno.png" alt="Zeno logo" />
-    <b><a href="https://github.com/zeno-ml/zeno/stargazers">Zeno</a></b>
+    <b
+      ><a style:color="var(--logo)" href="https://github.com/zeno-ml/zeno/stargazers"
+        >Zeno</a
+      ></b
+    >
   </div>
   <br />
-  <div>Add your own evals!</div>
+  <div class="tagline">
+    Submit a PR to add new evals to this page!
+    <iframe
+      src="https://ghbtns.com/github-btn.html?user=zeno-ml&repo=zeno-evals-hub&type=fork&count=true"
+      frameborder="0"
+      scrolling="0"
+      width="150"
+      height="20"
+      title="GitHub"
+    />
+  </div>
   <!-- table with links to zeno sites. -->
   <div id="container">
     <div id="table-background">
@@ -77,6 +91,9 @@
 </main>
 
 <style>
+  iframe {
+    margin-left: 10px;
+  }
   #container {
     margin: 50px 20px;
     display: flex;
@@ -141,6 +158,7 @@
     margin-left: 5px;
   }
   .tagline {
+    font-size: 18px;
     text-align: center;
     display: flex;
     justify-content: center;

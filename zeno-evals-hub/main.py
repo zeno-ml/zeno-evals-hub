@@ -80,6 +80,10 @@ def command_line():
 
         config.serve = False
         config.cache_path = "./.zeno_cache_" + name
+        config.multiprocessing = False
+        port_arg = os.getenv("PORT")
+        if port_arg is not None:
+            config.editable = False
 
         zeno_obj = zeno(config)
         if zeno_obj is None:
