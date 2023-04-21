@@ -5,6 +5,7 @@ description = ""
 authors = ["Alex Cabrera <alex.cabrera@gmail.com>"]
 readme = "README.md"
 packages = [{ include = "zeno-evals-hub" }]
+include = ["zeno/frontend/**/*"]
 
 [tool.poetry.dependencies]
 zenoml = "^0.4.7"
