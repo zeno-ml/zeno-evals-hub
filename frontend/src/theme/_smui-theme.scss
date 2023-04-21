@@ -1,0 +1,95 @@
+@use "sass:color";
+
+@use "@material/theme/color-palette";
+
+@use "@material/theme/index" as theme with (
+  $primary: #6a1b9a,
+  $secondary: #989895,
+  $surface: #ffffff,
+  $background: #ffffff,
+  $error: color-palette.$red-900
+);
+
+.material-icons {
+  fill: var(--logo);
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #213547;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --G1: #333333;
+  --G2: #73726f;
+  --G3: #989895;
+  --G4: #d3d3d3;
+  --G5: #ebebea;
+  --G6: #ffffff;
+  --logo: #6a1b9a;
+  --P1: #b18bd3;
+  --P2: #d2bae9;
+  --P3: #f7f1fb;
+  --P4: #f9f7fb;
+  --Y1: #f2f2ee;
+  --Y2: #fbfbfa;
+
+  --mdc-theme-primary: var(--G2);
+  --mdc-theme-secondary: var(--G3);
+  --mdc-theme-background: var(--G6);
+  --mdc-theme-surface: var(--G6);
+  --mdc-theme-error: #b71c1c;
+  --mdc-theme-on-primary: var(--G6);
+  --mdc-theme-on-secondary: var(--G6);
+  --mdc-theme-on-surface: var(--G1);
+  --mdc-theme-on-error: var(--G6);
+  --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-dark: white;
+  --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
+  --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-outlined-button-container-height: 33px;
+  --mdc-filled-button-container-color: var(--logo);
+}
+
+a {
+  color: #213547;
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--logo);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.card {
+  padding: 2em;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3px;
+  text-align: center;
+}

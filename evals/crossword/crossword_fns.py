@@ -1,5 +1,5 @@
-from zeno import distill, DistillReturn
 from wordfreq import word_frequency
+from zeno import DistillReturn, distill
 
 
 @distill
