@@ -2997,14 +2997,14 @@ multidict = ">=4.0"
 
 [[package]]
 name = "zeno-evals"
-version = "0.1.8"
+version = "0.1.9"
 description = "Visualize OpenAI evals with Zeno"
 category = "main"
 optional = false
 python-versions = ">=3.9,<=3.11"
 files = [
-    {file = "zeno_evals-0.1.8-py3-none-any.whl", hash = "sha256:64ff4b7e1f247be7d591c190cc909eaf02d83f1850549a6d97b33f109830dcf5"},
-    {file = "zeno_evals-0.1.8.tar.gz", hash = "sha256:cea1ba179c2594294ddeca0391842ccc476701a34572fe2733e3512eca8d8a9c"},
+    {file = "zeno_evals-0.1.9-py3-none-any.whl", hash = "sha256:841b477f79351180c692362ac25a562aaff1c64f988da7f560fdbe231505c731"},
+    {file = "zeno_evals-0.1.9.tar.gz", hash = "sha256:190e4d0466f68d0f7a7476606faf0d27ae9f741e0a0f25668eeedada249eda0f"},
 ]
 
 [package.dependencies]
@@ -3059,4 +3059,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9.0,<=3.11"
-content-hash = "8cdb312a4e47f0c40a7d68d98eabd87ebbca4d8be8effd857af440212db659ad"
+content-hash = "c28235c2c8e520f3ecbcd55e84581fc4f7783887c7764f556e2f404cba3c7c29"

@@ -10,7 +10,7 @@ zenoml = "^0.4.7"
 python = "^3.9.0,<=3.11"
 fastapi = "^0.95.0"
 uvicorn = "^0.21.1"
-zeno-evals = "^0.1.8"
+zeno-evals = "^0.1.9"
 pyyaml = "^6.0"
 wordfreq = "^3.0.3"
 
