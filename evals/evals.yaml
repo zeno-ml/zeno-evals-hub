@@ -13,6 +13,7 @@
 - med-mcqa:
     results-file: ./medmcqa/med-3.5-turbo.jsonl
     second-results-file: ./medmcqa/med-4.jsonl
+    functions-file: ./medmcqa/med_fns.py
     link: https://github.com/openai/evals/commit/19b2cf9ff96b08af68f5c3b4d2c90184844a4fe6
     description: Multiple choice questions from different medical areas.
 - aba-mrpc:
