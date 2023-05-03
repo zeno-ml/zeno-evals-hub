@@ -1,4 +1,4 @@
-<!-- ---
+---
 title: Zeno Evals Hub
 emoji: 🏃
 colorFrom: pink
@@ -7,7 +7,7 @@ sdk: docker
 pinned: false
 license: mit
 fullWidth: true
---- -->
+---
 
 # Zeno + OpenAI Evals
 

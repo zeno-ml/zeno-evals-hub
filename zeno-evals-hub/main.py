@@ -24,7 +24,7 @@ def prepare_spec(file_path):
 
     res["models"] = data[0]["spec"]["completion_fns"][0]
     res["accuracy"] = accuracy * 100
-    res["events"] = len(data) - 2
+    res["events"] = (len(data) - 2) / 2
     return res
 
 
