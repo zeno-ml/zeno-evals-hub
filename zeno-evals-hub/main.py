@@ -64,6 +64,7 @@ def command_line():
         params["accuracy"] = [res_spec["accuracy"]]
         params["events"] = [res_spec["events"]]
         params["link"] = [params["link"]]
+        params["description"] = [params["description"]]
 
         if second_exists:
             sec_res_spec = prepare_spec(params["second-results-file"])
@@ -81,6 +82,7 @@ def command_line():
         config.serve = False
         config.cache_path = "./.zeno_cache_" + name
         config.multiprocessing = False
+        config.batch_size = 2000
         port_arg = os.getenv("PORT")
         if port_arg is not None:
             config.editable = False

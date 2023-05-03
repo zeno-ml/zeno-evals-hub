@@ -43,6 +43,7 @@
         <thead>
           <tr>
             <th>evaluation</th>
+            <th>description</th>
             <th>models</th>
             <th>accuracy</th>
             <th>instances</th>
@@ -59,14 +60,15 @@
                 <td
                   ><a href={d[name]["link"]}><span class="name-wrap">{name}</span></a>
                 </td>
-                <td>
+                <td>{d[name]["description"]}</td>
+                <td style:min-width="120px">
                   {#each d[name]["models"] as m}{m}<br />{/each}
                 </td>
                 <td>
                   {#each d[name]["accuracy"] as a}{a.toFixed(2)}%<br />{/each}
                 </td>
                 <td>
-                  {#each d[name]["events"] as e}{e}<br />{/each}
+                  {d[name]["events"][0]}
                 </td>
                 <td>
                   <Button
@@ -100,7 +102,8 @@
     justify-content: center;
   }
   #table-background {
-    width: 900px;
+    width: 1100px;
+    min-width: 900px;
     padding: 20px;
     border-radius: 20px;
   }

@@ -2,11 +2,26 @@
     results-file: ./crossword/crossword-turbo.jsonl
     second-results-file: ./crossword/crossword-4.jsonl
     functions-file: ./crossword/crossword_fns.py
-    link: https://github.com/openai/evals/tree/main/evals/registry/data/partially_solved_crossword_clues
-- us-tort-law:
-    results-file: ./us-tort-law/us-tort-law-turbo.jsonl
-    link: https://github.com/openai/evals/tree/main/evals/registry/data/us-tort-law
-- emotional-intelligence:
-    results-file: ./emotional-intelligence/emotional-intelligence-turbo.jsonl
-    second-results-file: ./emotional-intelligence/emotional-intelligence-0301.jsonl
-    link: https://github.com/openai/evals/tree/main/evals/registry/data/emotional-intelligence
+    link: https://github.com/openai/evals/commit/fa192552a19c297c65a8a398ede53b62a289ab9c
+    description: Given a clue and a partially filled crossword answer, provide the filled in answer
+- country-area:
+    results-file: ./country-area/countries-turbo.jsonl
+    second-results-file: ./country-area/countries-4.jsonl
+    functions-file: ./country-area/country_fns.py
+    link: https://github.com/openai/evals/commit/24dae81ae06ebc70808690c7a147f2710e3e54bf
+    description: Select the country with the biggest area from a list of countries
+- med-mcqa:
+    results-file: ./medmcqa/med-3.5-turbo.jsonl
+    second-results-file: ./medmcqa/med-4.jsonl
+    link: https://github.com/openai/evals/commit/19b2cf9ff96b08af68f5c3b4d2c90184844a4fe6
+    description: Multiple choice questions from different medical areas.
+- aba-mrpc:
+    results-file: ./aba-mrpc-true-false/aba-3.5-turbo.jsonl
+    second-results-file: ./aba-mrpc-true-false/aba-4.jsonl
+    link: https://github.com/openai/evals/commit/9badb0395b696958e539f001e62d377ed0e237de
+    description: True/False questions based on the American Bar Association's Model Rules of Professional Conduct
+- logic-statements:
+    results-file: ./logic/logic-turbo.jsonl
+    second-results-file: ./logic/logic-4.jsonl
+    link: https://github.com/openai/evals/commit/81b959c37c7ed2ffe0c4c145e9e3eee955d27cc3
+    description: Tests of simple logical reasoning statements.
