@@ -8,21 +8,16 @@
 
 <main>
   <header>
-    <h1>Zeno Evals Hub</h1>
+    <h1>Zeno + OpenAI Evals</h1>
   </header>
   <div class="tagline">
-    Explore and compare the results of
+    Use the <img class="open_ai" src="./build/zeno.png" alt="Zeno logo" />
+    <b><a style:color="var(--logo)" href="https://github.com/zeno-ml/zeno/">Zeno</a></b>
+    AI evaluation tool to compare the performance of models accross
     <img class="open_ai" src="./build/openai.svg" alt="OpenAI logo" />
     <a href="https://github.com/openai/evals">
-      <b>OpenAI Evals </b>
-    </a>
-    with
-    <img class="open_ai" src="./build/zeno.png" alt="Zeno logo" />
-    <b
-      ><a style:color="var(--logo)" href="https://github.com/zeno-ml/zeno/stargazers"
-        >Zeno</a
-      ></b
-    >
+      <b>OpenAI Evals</b>
+    </a> tasks.
   </div>
   <br />
   <div class="tagline">

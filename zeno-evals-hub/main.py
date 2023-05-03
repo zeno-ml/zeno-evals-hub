@@ -88,6 +88,7 @@ def command_line():
             config.editable = False
 
         zeno_obj = zeno(config)
+        print(config.metadata["expected"])
         if zeno_obj is None:
             sys.exit(1)
         server = get_server(zeno_obj)
