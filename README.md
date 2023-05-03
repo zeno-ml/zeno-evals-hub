@@ -11,6 +11,10 @@ fullWidth: true
 
 # Zeno + OpenAI Evals
 
+![Github Actions CI tests](https://github.com/zeno-ml/zeno-openai-evals/actions/workflows/test.yml/badge.svg)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+[![Discord](https://img.shields.io/discord/1086004954872950834)](https://discord.gg/km62pDKAkE)
+
 OpenAI's [Evals library](https://github.com/openai/evals) is a great resource providing evaluation sets for LLMS.
 
 This repo provides a hub for exploring these results using the [Zeno](https://zenoml.com) evaluation tool.
