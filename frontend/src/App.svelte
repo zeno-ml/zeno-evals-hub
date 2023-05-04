@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import Button, { Icon, Label } from "@smui/button";
   let data = fetch("/args").then((d) => d.json());
   let blur = function (ev) {

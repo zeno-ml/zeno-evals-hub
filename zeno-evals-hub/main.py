@@ -6,7 +6,7 @@ import uvicorn
 import yaml  # type: ignore
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from zeno import ZenoParameters, get_server, zeno  # type: ignore
+from zeno import get_server, zeno, ZenoParameters  # type: ignore
 from zeno_evals import ZenoEvals  # type: ignore
 
 
