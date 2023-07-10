@@ -14,7 +14,7 @@
     "generate-api": "openapi --input http://localhost:8000/api/openapi.json --output ./src/zeno-evals-hubservice --client fetch; npx prettier -w ./src/zeno-evals-hubservice"
   },
   "devDependencies": {
-    "@smui/button": "^7.0.0-beta.8",
+    "@smui/button": "^7.0.0-beta.14",
     "@smui/data-table": "^7.0.0-beta.9",
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
     "@tsconfig/svelte": "^3.0.0",
