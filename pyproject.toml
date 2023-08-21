@@ -8,7 +8,7 @@ packages = [{ include = "zeno-evals-hub" }]
 include = ["zeno-evals-hub/frontend/**/*"]
 
 [tool.poetry.dependencies]
-zenoml = "^0.4.10"
+zenoml = "^0.4.12"
 python = "^3.9.0,<=3.11"
 fastapi = "^0.95.2"
 uvicorn = "^0.21.1"
