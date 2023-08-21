@@ -1447,13 +1447,13 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
 name = "usort"
-version = "1.0.6"
+version = "1.0.7"
 description = "A small, safe import sorter"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "usort-1.0.6-py3-none-any.whl", hash = "sha256:81c69a4a6a750824834b18019a2e325ea38d7ae944cca4d98f15e62a27ca1f27"},
-    {file = "usort-1.0.6.tar.gz", hash = "sha256:b30a212f196d8f7b624e8c70ff0b11a6de4b1e1f21cc4fa75adf1689367e807a"},
+    {file = "usort-1.0.7-py3-none-any.whl", hash = "sha256:0c21ae061ef7ad9c8b50b41ff58c6ded31e24e4e5059f39490b8a0feb36045ff"},
+    {file = "usort-1.0.7.tar.gz", hash = "sha256:5724c2c7e6070d170961222d15a35e01e44b81164c6a6dc5e2aed6bcfdff9e8f"},
 ]
 
 [package.dependencies]
@@ -1639,4 +1639,4 @@ websockets = ">=10.2,<12.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9.0,<=3.11"
-content-hash = "fb9025696015d17e3aea98c2bc2c42b691b6bcf63fc1b1b5fb1f0c0f071a1c17"
+content-hash = "1d5401d64f39416fb7ad4d412aedb11ff74bd53a93dbdeafad262c65cc5e18ee"
