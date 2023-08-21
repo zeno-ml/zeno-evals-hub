@@ -21,7 +21,7 @@ black = "^23.3.0"
 usort = "^1.0.7"
 flake8 = "^6.0.0"
 mypy = "^1.2.0"
-pyright = "^1.1.302"
+pyright = "^1.1.323"
 prettier = "^0.0.7"
 
 [build-system]
