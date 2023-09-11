@@ -17,7 +17,7 @@ pyyaml = "^6.0"
 wordfreq = "^3.0.3"
 
 [tool.poetry.dev-dependencies]
-black = "^23.7.0"
+black = "^23.9.1"
 usort = "^1.0.7"
 flake8 = "^6.1.0"
 mypy = "^1.5.1"
