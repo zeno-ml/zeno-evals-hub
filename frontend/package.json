@@ -18,7 +18,7 @@
     "@smui/data-table": "^7.0.0-beta.15",
     "@sveltejs/vite-plugin-svelte": "^2.4.5",
     "@tsconfig/svelte": "^3.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "openapi-typescript-codegen": "^0.25.0",
     "smui-theme": "^7.0.0-beta.15",
